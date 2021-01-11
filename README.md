@@ -39,9 +39,7 @@ Caso tenha quaisquer dúvidas sobre este teste, a qualquer momento, sinta-se à 
 
 Suba seu código em um repositório do GitHub e, ao final, certifique-se de torna-lo público ou compartilhá-lo com os seguintes usuários:
 
-- jsuzuki
-- batosti
-- jesse1983
+- engenhariaingaia
 
 ## Dicas importantes:
 
