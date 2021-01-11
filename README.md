@@ -37,9 +37,7 @@ Preferencialmente gostaríamos de ver seu código na linguagem da descrição da
 
 Caso tenha quaisquer dúvidas sobre este teste, a qualquer momento, sinta-se à vontade para entrar em contato através do e-mail engineering-tests@ingaia.com.br
 
-Suba seu código em um repositório do GitHub e, ao final, certifique-se de torna-lo público ou compartilhá-lo com os seguintes usuários:
-
-- engenhariaingaia
+Suba seu código em um repositório do GitHub e, ao final, compartilhe com o usuário: engenhariaingaia
 
 ## Dicas importantes:
 
