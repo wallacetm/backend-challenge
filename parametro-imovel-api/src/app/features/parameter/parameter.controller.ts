@@ -32,8 +32,8 @@ export class ParameterController extends BaseHttpController {
    *
    * @route GET /parameter/:name
    * @group Parameter
-   * @param {string} name.param - Parameter name.
-   * @returns {Movie.model} 200 - Parameter.
+   * @param {string} name.param.required - Parameter name.
+   * @returns {Parameter.model} 200 - Parameter.
    * @returns {HttpError.model} 404 - Parameter not found.
    */
   @httpGet('/:name')
