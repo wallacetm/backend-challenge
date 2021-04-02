@@ -4,7 +4,7 @@ import { TYPES } from '../../core/containers/types';
 import { ParameterService } from './interfaces';
 import { ParameterDTO } from './parameter.dto';
 import { ConfigService } from '../../core/config/interfaces';
-import { CONFIG_PROPERTY_PARAMETER_URL } from '../../../constants';
+import { CONFIG_PROPERTY_PARAMETER_HOST, CONFIG_PROPERTY_PARAMETER_PORT } from '../../../constants';
 
 @injectable()
 export class ExternalParameterService implements ParameterService {
@@ -15,7 +15,7 @@ export class ExternalParameterService implements ParameterService {
 
   get baseUrl(): string {
     if (!this._baseUrl) {
-      this._baseUrl = this.config.get<string>(CONFIG_PROPERTY_PARAMETER_URL)
+      this._baseUrl = `http://${this.config.get<string>(CONFIG_PROPERTY_PARAMETER_HOST)}:${this.config.get<string>(CONFIG_PROPERTY_PARAMETER_PORT)}`
     }
     return this._baseUrl;
   }

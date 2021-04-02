@@ -12,7 +12,7 @@ services:
     expose:
       - 5432
   parametro-imovel-api:
-    build: .
+    build: ./parametro-imovel-api
     environment:
       DATABASE_NAME: postgres
       DATABASE_HOST: db
@@ -25,6 +25,16 @@ services:
       - 3000:3000
     links:
       - db
+  imovel-api:
+    build: ./imovel-api
+    environment:
+      PROPERTY_PARAMETER_HOST: parametro-imovel-api
+      PROPERTY_PARAMETER_PORT: 3000
+      NODE_ENV: production
+    ports:
+      - 3001:3000
+    links:
+      - parametro-imovel-api
   adminer: # Use this to check the tables and database values
     image: adminer
     ports:

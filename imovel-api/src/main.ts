@@ -28,7 +28,8 @@ async function bootstrap() {
       Secret: process.env['AUTH_SECRET']
     },
     PropertyParameter: {
-      Url: process.env['PROPERTY_PARAMETER_URL'],
+      Host: process.env['PROPERTY_PARAMETER_HOST'],
+      Port: process.env['PROPERTY_PARAMETER_PORT'],
       SquareMeter: process.env['PROPERTY_PARAMETER_SQUARE_METER']
     }
   });
