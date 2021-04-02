@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+  desafio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_NAME: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_PASS: postgres
+      DATABASE_USER: postgres
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    links:
+      - db
+  adminer: # Use this to check the tables and database values 
+    image: adminer
+    ports:
+      - 8080:8080
+    links:
+      - db
