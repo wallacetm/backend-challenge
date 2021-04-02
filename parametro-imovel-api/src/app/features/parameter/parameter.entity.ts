@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { VanillaColumnNumericTransformer } from '../../core/database/column-numeric.transformer';
+import { VanillaColumnNumericTransformer } from '../../core/database/vanilla-column-numeric.transformer';
 import { ParameterDTO } from './parameter.dto';
 
 @Entity('parameters')

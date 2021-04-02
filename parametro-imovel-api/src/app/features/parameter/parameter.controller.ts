@@ -7,7 +7,9 @@ import * as createHttpError from 'http-errors';
 @controller('/parameter')
 export class ParameterController extends BaseHttpController {
 
-  @inject(TYPES.CONTAINER_DEFAULT_PARAMETER_SERVICE) private readonly service: ParameterService;
+  constructor(@inject(TYPES.CONTAINER_DEFAULT_PARAMETER_SERVICE) private readonly service: ParameterService) {
+    super();
+  }
 
   /**
    * List all parameters.

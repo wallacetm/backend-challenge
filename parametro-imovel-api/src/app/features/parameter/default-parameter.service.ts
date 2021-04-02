@@ -9,14 +9,14 @@ import { ParameterDTO } from './parameter.dto';
 @injectable()
 export class DefaultParameterService implements ParameterService {
 
-  @inject(TYPES.CONTAINER_DATABASE_CONNECTION) connection: Connection;
+  constructor(@inject(TYPES.CONTAINER_DATABASE_CONNECTION) private readonly connection: Connection) { }
 
   get repository(): Repository<ParameterEntity> {
     return this.connection.getRepository(ParameterEntity);
   }
 
   async get(name: string): Promise<ParameterDTO> {
-    const entity = await this.repository.findOne({
+    const entity = await this.repository.findOneOrFail({
       where: {
         name
       }
