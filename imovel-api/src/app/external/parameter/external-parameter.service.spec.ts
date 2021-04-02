@@ -1,6 +1,5 @@
 import { ConfigService } from '../../core/config/interfaces';
 import { ExternalParameterService } from './external-parameter.service';
-import { MapConfigService } from '../../core/config/map-config.service';
 import { mocked } from 'ts-jest/utils';
 import axios from 'axios';
 import { ParameterDTO } from './parameter.dto';
@@ -12,18 +11,21 @@ test('should call axios get on parameter external api', async () => {
   //Arrange
   const baseUrl = 'base_url';
   const name = 'square_meter';
-  const config: ConfigService = new MapConfigService();
-  config.get = jest.fn().mockImplementation(() => {
-    return baseUrl;
-  });
+  const config = {
+    get: jest.fn().mockImplementation(() => {
+      return baseUrl;
+    })
+  };
   const axiosMock = mocked(axios);
   axiosMock.get = jest.fn().mockImplementation(() => {
-    return new ParameterDTO({
-      name,
-      value: 37.55
+    return Promise.resolve({
+      data: new ParameterDTO({
+        name,
+        value: 37.55
+      })
     });
   });
-  const service = new ExternalParameterService(config);
+  const service = new ExternalParameterService((config as unknown) as ConfigService);
   //Act
   const ret = await service.getParameter(name);
   //Assert

@@ -9,7 +9,7 @@ import BigNumber from 'bignumber.js';
 
 
 export class PropertyDTO {
-  constructor(partial: Partial<PropertyDTO> = {}) {
+  constructor(partial: Partial<Omit<PropertyDTO, 'toJSON'>> = {}) {
     Object.assign(this, partial);
   }
 

@@ -23,7 +23,7 @@ export class PropertyController extends BaseHttpController {
   @httpGet('/calculate')
   public async calculateProperty(@queryParam('meters') meters: string): Promise<interfaces.IHttpActionResult> {
     try {
-      if (!meters && +meters !== 0) {
+      if (!meters || +meters === 0) {
         throw createHttpError(400, 'Query param "meters" cannot be empty');
       }
       const metersValue = new BigNumber(meters);

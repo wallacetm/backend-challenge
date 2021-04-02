@@ -19,7 +19,7 @@ export class ConsoleLoggerService implements LoggerService {
           return `${timestamp} [${label}] ${level}: ${message}`;
         }),
       ),
-      transports: [new winston.transports.Console({ level: config.get<string>(CONFIG_SERVER_NODE_ENV) === 'prod' ? 'info' : 'debug' })],
+      transports: [new winston.transports.Console({ level: config.get<string>(CONFIG_SERVER_NODE_ENV) === 'production' ? 'info' : 'debug' })],
     })
   }
 

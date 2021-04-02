@@ -4,7 +4,7 @@ import { ParameterDTO } from './parameter.dto';
 
 @Entity('parameters')
 export class ParameterEntity {
-  constructor(partial: Partial<ParameterEntity> = {}) {
+  constructor(partial: Partial<Omit<ParameterEntity, 'toDTO'>> = {}) {
     Object.assign(this, partial);
   }
 
