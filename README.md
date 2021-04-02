@@ -45,3 +45,12 @@ Suba seu código em um repositório do GitHub e, ao final, compartilhe com o usu
 
 - Não se esqueça de disponibilizar o link do repositório e o link da API online.
 
+## Instruções do DEV:
+
+Cada api tem seu README.md explicando algumas coisas sobre o projeto desenvolvido.
+
+Para subir todas as duas apis, utilize o arquivo `docker-compose.yaml` da raiz do projeto, executando através do comando: `docker-compose -f "docker-compose.yaml" up -d --build`.
+
+- parametro-imovel-api: http://localhost:3000/api-docs
+- imovel-api: http://localhost:3001/api-docs
+- adminer (Facilitador para checar informações de base): http://localhost:8080
