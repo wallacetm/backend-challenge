@@ -22,11 +22,12 @@ services:
       DATABASE_PASS: postgres
       DATABASE_USER: postgres
       NODE_ENV: production
+      DATABASE_SCHEMA: ingaia
     ports:
       - 3000:3000
     links:
       - db
-  adminer: # Use this to check the tables and database values 
+  adminer: # Use this to check the tables and database values
     image: adminer
     ports:
       - 8080:8080
