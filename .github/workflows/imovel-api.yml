@@ -2,13 +2,13 @@
 
 name: CI Imovel-api
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,15 +28,12 @@ jobs:
         with:
           # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
           node-version: 14
-      
-      - name: Change folder
-        run: cd imovel-api
-      
+
       - name: Install
-        run: npm install
-        
+        run: cd imovel-api && npm install
+
       - name: Build
-        run: npm run build
+        run: cd imovel-api && npm run build
   # This workflow contains a single job called "build"
   test:
     # The type of runner that the job will run on
@@ -53,13 +50,9 @@ jobs:
         with:
           # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
           node-version: 14
-      
-      - name: Change folder
-        run: cd imovel-api
-      
+
       - name: Install
-        run: npm install
-        
+        run: cd imovel-api && npm install
+
       - name: Test
-        run: npm run test:cov
-        
+        run: cd imovel-api && npm run test:cov

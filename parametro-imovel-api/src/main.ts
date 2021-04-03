@@ -22,7 +22,7 @@ async function bootstrap() {
       BaseDir: __dirname
     },
     Server: {
-      Port: process.env['PORT'],
+      Port: process.env['PORT'] || process.env['$PORT'],
       NodeEnv: process.env['NODE_ENV']
     },
     Database: {
