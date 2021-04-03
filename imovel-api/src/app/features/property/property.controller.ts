@@ -15,7 +15,7 @@ export class PropertyController extends BaseHttpController {
   /**
    * Calculate an property value based on meters
    * 
-   * @route GET /propery/calculate
+   * @route GET /property/calculate
    * @group Property
    * @param {string} meters.query.required - Property meters.
    * @returns {Property.model} 200 - Property calculated.

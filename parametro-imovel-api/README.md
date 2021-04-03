@@ -34,4 +34,4 @@ Cada commit para o `main`, gera um novo build e deploy no github actions.
 
 ## Disponibilização online
 
-Está disponível em: ${url_heroku}.
+Está disponível em: [ingaia-parametro-imovel-api](https://ingaia-parametro-imovel-api.herokuapp.com).
