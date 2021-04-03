@@ -1,0 +1,4 @@
+build:
+  docker:
+    imovel-api: imovel-api/Dockerfile
+    parametro-imovel-api: parametro-imovel-api/Dockerfile
