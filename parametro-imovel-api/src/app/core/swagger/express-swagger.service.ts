@@ -19,7 +19,7 @@ export class ExpressSwaggerService implements SwaggerService<Express> {
           version: this.config.get(CONFIG_APPLICATION_VERSION),
         },
         produces: ['application/json',],
-        schemes: ['http'],
+        schemes: ['https'],
       },
       basedir: this.config.get(CONFIG_APPLICATION_BASEDIR),
       files: [
