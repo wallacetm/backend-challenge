@@ -51,6 +51,11 @@ Cada api tem seu README.md explicando algumas coisas sobre o projeto desenvolvid
 
 Para subir todas as duas apis, utilize o arquivo `docker-compose.yaml` da raiz do projeto, executando através do comando: `docker-compose -f "docker-compose.yaml" up -d --build`.
 
-- parametro-imovel-api: http://localhost:3000/api-docs
-- imovel-api: http://localhost:3001/api-docs
-- adminer (Facilitador para checar informações de base): http://localhost:8080
+- [parametro-imovel-api](http://localhost:3000/api-docs)
+- [imovel-api](http://localhost:3001/api-docs)
+- [adminer](http://localhost:8080) (Facilitador para checar informações de base)
+
+### Acessando online
+
+- [parametro-imovel-api](https://ingaia-parametro-imovel-api.herokuapp.com/api-docs)
+- [imovel-api](https://ingaia-imovel-api.herokuapp.com/api-docs)
