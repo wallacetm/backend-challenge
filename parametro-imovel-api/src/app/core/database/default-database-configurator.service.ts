@@ -22,7 +22,10 @@ export class DefaultDatabaseConfiguratorService implements DatabaseConfiguratorS
         type: 'postgres',
         synchronize: false,
         logging: this.config.get<boolean>(CONFIG_DATABASE_LOGGING, false),
-        url: this.config.get<string>(CONFIG_DATABASE_URL)
+        url: this.config.get<string>(CONFIG_DATABASE_URL),
+        ssl: {
+          rejectUnauthorized: false,
+        }
       };
       const migrationConnection = await createConnection({
         ...connectionOptions,
