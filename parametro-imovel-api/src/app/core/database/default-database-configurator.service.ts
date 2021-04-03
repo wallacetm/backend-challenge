@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { Connection, ConnectionOptions, createConnection, getConnection } from 'typeorm';
-import { CONFIG_APPLICATION_BASEDIR, CONFIG_DATABASE_HOST, CONFIG_DATABASE_PASS, CONFIG_DATABASE_PORT, CONFIG_DATABASE_USER, CONFIG_DATABASE_NAME, CONFIG_DATABASE_LOGGING, CONFIG_DATABASE_SCHEMA } from '../../../constants';
+import { CONFIG_APPLICATION_BASEDIR, CONFIG_DATABASE_HOST, CONFIG_DATABASE_PASS, CONFIG_DATABASE_PORT, CONFIG_DATABASE_USER, CONFIG_DATABASE_NAME, CONFIG_DATABASE_LOGGING, CONFIG_DATABASE_SCHEMA, CONFIG_DATABASE_URL } from '../../../constants';
 import { ConfigService } from '../config/interfaces';
 import { TYPES } from '../containers/types';
 import { LoggerService } from '../logger/interfaces';
@@ -22,6 +22,7 @@ export class DefaultDatabaseConfiguratorService implements DatabaseConfiguratorS
         type: 'postgres',
         synchronize: false,
         logging: this.config.get<boolean>(CONFIG_DATABASE_LOGGING, false),
+        url: this.config.get<string>(CONFIG_DATABASE_URL)
       };
       const migrationConnection = await createConnection({
         ...connectionOptions,

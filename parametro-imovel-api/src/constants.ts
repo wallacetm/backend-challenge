@@ -15,3 +15,4 @@ export const CONFIG_DATABASE_USER = 'database:user';
 export const CONFIG_DATABASE_PASS = 'database:pass';
 export const CONFIG_DATABASE_LOGGING = 'database:logging';
 export const CONFIG_DATABASE_SCHEMA = 'database:schema';
+export const CONFIG_DATABASE_URL = 'database:url';

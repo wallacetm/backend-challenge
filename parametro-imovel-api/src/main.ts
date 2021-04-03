@@ -33,6 +33,7 @@ async function bootstrap() {
       Pass: process.env['DATABASE_PASS'],
       Logging: false,
       Schema: process.env['DATABASE_SCHEMA'],
+      Url: process.env['DATABASE_URL'],
     },
     Auth: {
       Secret: process.env['AUTH_SECRET']
